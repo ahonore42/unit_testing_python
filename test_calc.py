@@ -58,6 +58,13 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.divide(2, 2), 1)
         # shoud return 0
 
+        self.assertRaises(ValueError, calc.divide, 10, 0)
+        # first assertRaises method
+
+        with self.assertRaises(ValueError):
+            calc.divide(10, 0)
+        # campaign manager method for assertRaises
+
 if __name__ == '__main__':
     unittest.main()
 # this will run every possible unit test in the file
