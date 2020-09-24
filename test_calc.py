@@ -9,6 +9,8 @@ class TestCalc(unittest.TestCase):
     def test_add(self):
         result = calc.add(10, 5)
         self.assertEqual(result, 15)
+        # pass in the result variable 
+        # and the correct result we're looking for
         # shoud return 15
         self.assertEqual(calc.add(100, 1), 101)
         # shoud return 101
@@ -16,10 +18,45 @@ class TestCalc(unittest.TestCase):
         # shoud return 0
         self.assertEqual(calc.add(2, 2), 4)
         # shoud return 0
-        # pass in the result we get as a return
+
+    def test_subtract(self):
+        result = calc.subtract(10, 5)
+        self.assertEqual(result, 5)
+        # pass in the result variable 
         # and the correct result we're looking for
+        # shoud return 15
+        self.assertEqual(calc.subtract(100, 1), 99)
+        # shoud return 101
+        self.assertEqual(calc.subtract(100, 50), 50)
+        # shoud return 0
+        self.assertEqual(calc.subtract(2, 2), 0)
+        # shoud return 0
 
+    def test_multiply(self):
+        result = calc.multiply(10, 5)
+        self.assertEqual(result, 50)
+        # pass in the result variable 
+        # and the correct result we're looking for
+        # shoud return 15
+        self.assertEqual(calc.multiply(100, 1), 100)
+        # shoud return 101
+        self.assertEqual(calc.multiply(-88, 88), -7744)
+        # shoud return 0
+        self.assertEqual(calc.multiply(2, 2), 4)
+        # shoud return 0
 
+    def test_divide(self):
+        result = calc.divide(10, 5)
+        self.assertEqual(result, 2)
+        # pass in the result variable 
+        # and the correct result we're looking for
+        # shoud return 15
+        self.assertEqual(calc.divide(100, 1), 100)
+        # shoud return 101
+        self.assertEqual(calc.divide(-88, 88), -1)
+        # shoud return 0
+        self.assertEqual(calc.divide(2, 2), 1)
+        # shoud return 0
 
 if __name__ == '__main__':
     unittest.main()
